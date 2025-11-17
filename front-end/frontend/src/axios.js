@@ -5,6 +5,7 @@ import axios from "axios";
  * Define a URL base e headers padrão para todas as requisições
  * 
  * IMPORTANTE: Configure a variável de ambiente VITE_API_URL na Vercel
+ * Exemplo: https://projectmate.duckdns.org/api
  * 
  * NOTA: Headers CORS (Access-Control-*) são enviados pelo SERVIDOR, não pelo cliente.
  * O backend Laravel já está configurado para enviar os headers CORS corretos.

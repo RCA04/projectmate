@@ -56,9 +56,9 @@ export const updateUserService = async (userId, data, token, isFormData = false)
         let response;
         
         // Se for FormData (upload de foto), usa uma instância do axios com configuração específica
-        if (isFormData) {
-            const axiosInstance = axios.create({
-                baseURL: import.meta.env.VITE_API_URL,
+            if (isFormData) {
+                const axiosInstance = axios.create({
+                    baseURL: import.meta.env.VITE_API_URL,
                 headers: {
                     'Accept': 'application/json',
                 },
