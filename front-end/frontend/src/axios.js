@@ -3,6 +3,8 @@ import axios from "axios";
 /**
  * Configuração do cliente Axios para comunicação com a API
  * Define a URL base e headers padrão para todas as requisições
+ * 
+ * IMPORTANTE: Configure a variável de ambiente VITE_API_URL na Vercel
  */
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
