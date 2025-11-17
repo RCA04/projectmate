@@ -5,6 +5,9 @@ import axios from "axios";
  * Define a URL base e headers padrão para todas as requisições
  * 
  * IMPORTANTE: Configure a variável de ambiente VITE_API_URL na Vercel
+ * 
+ * NOTA: Headers CORS (Access-Control-*) são enviados pelo SERVIDOR, não pelo cliente.
+ * O backend Laravel já está configurado para enviar os headers CORS corretos.
  */
 const api = axios.create({
     baseURL: import.meta.env.VITE_API_URL,
@@ -16,6 +19,10 @@ const api = axios.create({
     validateStatus: function (status) {
         return status >= 200 && status < 300; // Aceita 200, 201, 202, etc.
     },
+    // Habilita envio de cookies e credenciais (se necessário no futuro)
+    withCredentials: false,
+    // Timeout de 30 segundos
+    timeout: 30000,
 });
 
 // Interceptor de requisição para garantir headers corretos
